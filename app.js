@@ -7,9 +7,12 @@ const resultDiv = document.getElementById('result');
 let expression = '';
 let result = '';
 
+inputBox.addEventListener('click', buttonClick);
+
 // Define event handler for button clicks
 function buttonClick(event) {
     // Get values from clicked button
+    console.log(event);
     const target = event.target;
     const action = target.dataset.action;
     const value = target.dataset.value;
@@ -54,8 +57,6 @@ function buttonClick(event) {
     // Update display
     updateDisplay(expression, result);
 }
-
-inputBox.addEventListener('click', buttonClick);
 
 function addValue(value) {
     if (value === '.') {
